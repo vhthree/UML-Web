@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>教师端主页面</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/css.css" />
+  <!-- endinject -->
+  <link rel="shortcut icon" href="images/favicon.png" />
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+          <a class="navbar-brand brand-logo" href="teacher.html">系统教师端</a>
+          <a class="navbar-brand brand-logo-mini" href="teacher.html">...</a>
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-sort-variant"></span>
+          </button>
+        </div>  
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-4 w-100">
+          <li class="nav-item nav-search d-none d-lg-block w-100">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="search">
+                  <i class="mdi mdi-magnify"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown mr-1">
+            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-message-text mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal">David Grey
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    The meeting is cancelled
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal">Tim Cook
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    New product launch
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal"> Johnson
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    Upcoming board meeting
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown mr-4">
+            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-success">
+                    <i class="mdi mdi-information mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">Application Error</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-warning">
+                    <i class="mdi mdi-settings mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">Settings</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Private message
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-info">
+                    <i class="mdi mdi-account-box mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img src="images/faces/face5.jpg" alt="profile"/>
+              <span class="nav-profile-name">教师端</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item">
+                <i class="mdi mdi-settings text-primary"></i>
+                Settings
+              </a>
+              <a class="dropdown-item">
+                <i class="mdi mdi-logout text-primary"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="teacher.html">
+              <i class="mdi mdi-home menu-icon"></i>
+              <span class="menu-title">主页面</span>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://lexue.bit.edu.cn/" target="_blank">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">管理课程资料(乐学)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-chart-pie menu-icon"></i>
+              <span class="menu-title">学生信息</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">教学任务</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-emoticon menu-icon"></i>
+              <span class="menu-title">学校考评</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+              <span class="menu-title">场地预约</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        
+
+
+
+
+
+        <div class="mainbody">
+    
+          <div class="adtip">
+            <div class="tip">
+              <p class="goom">老师，你好！</p>
+              <p>您目前有<span>15</span>条待办，<span>2</span>条通知！</p>
+            </div>
+           
+          </div>
+         
+          <div class="rig_lm01">
+            
+            <div class="detail">
+              <div class="dat01"> <span class="sqdeta">重要通知：您提交的换课申请已经批改，换课时间为2023-04-09  09:55-12:20，理教301，请按时上课！</span>
+                <p class="linkbut"><a href="#">加入日历</a><a href="#">查看</a><a href="#">知道了</a></p>
+              </div>
+              <div class="dat02">  
+                
+              </div>
+            </div>
+          </div>
+          <div class="rig_lm02">
+            <div class="title"><img src="images/listicon.jpg" class="icon" style="padding-top:13px;">
+              <h2>本周教学计划</h2>
+            </div>
+            <div class="detail">
+              <div class="det_inner">
+                <div class="jd"><img src="images/jd.jpg" alt="" title=""></div>
+                <div class="bs">
+                  <p><img src="images/bs_01.jpg" alt="" title=""> 已完成</p>
+                  <p><img src="images/bs_02.jpg" alt="" title=""> 未完成</p>
+                </div>
+                <div class="scordeti">
+                  <ul>
+                    <li>
+                      <p class="ywc">111</p>
+                      <h3>课程学生数</h3>
+                    </li>
+                    <li>
+                      <p class="wwc">100</p>
+                      <h3>上次作业提交人数</h3>
+                    </li>
+                    <li>
+                      <p class="ycd">11</p>
+                      <h3>上次作业未交人数</h3>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rig_lm03">
+            <div class="title"><img src="images/listicon.jpg" class="icon" style="padding-top:13px;">
+              <h2>待办事项</h2>
+            </div>
+            <div class="detail">
+              <div class="inner03">
+                <div id="tabCot_product" class="zhutitab">
+                  <div class="tabContainer">
+                    <ul class="tabHead" id="tabCot_product-li-currentBtn-">
+                      <li class="currentBtn"><a href="javascript:void(0)" title="作业提交" rel="1">作业提交</a><span class="grey_numb">12</span></li>
+                      <li ><a href="javascript:void(0)" title="学生请假" rel="2">学生请假</a><span class="red_numb">2</span></li>
+                      <li ><a href="javascript:void(0)" title="其他" rel="3">其他</a><span class="red_numb">5</span></li>
+                    </ul>
+                    <p class="shent"><span>Show entries: </span>
+                      <input style="width:30px;" type="text" value="10">
+                      <img src="images/sz.jpg" class="icon" ></p>
+                    <div class="clear"></div>
+                  </div>
+                  <div id="tabCot_product_1" class="tabCot" >
+                    <table class="tabindex" width="100%" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <th width="10%" bgcolor="#f8f8f8" scope="col"><div align="center">头像</div></th>
+                        <th width="21%" bgcolor="#f8f8f8" scope="col"><span class="titlab">姓名</span><span class="xila">&or;</span></th>
+                        <th width="22%" bgcolor="#f8f8f8" scope="col"><span class="titlab">提交时间</span><span class="xila">&or;</span></th>
+                        <th width="21%" bgcolor="#f8f8f8" scope="col"><span class="titlab">提交方式</span><span class="xila">&or;</span></th>
+                        <th width="7%" bgcolor="#f8f8f8" scope="col"><span class="titlab">状态</span><span class="xila">&or;</span></th>
+                        <th width="19%" bgcolor="#f8f8f8" scope="col">操作</th>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#FFFFFF"><div align="center"><img src="images/tx.jpg"></div></td>
+                        <td class="datacol" bgcolor="#FFFFFF">张三</td>
+                        <td bgcolor="#FFFFFF">2023.04.20 00:01</td>
+                        <td bgcolor="#FFFFFF">乐学</td>
+                        <td class="yccol" bgcolor="#FFFFFF">迟交</td>
+                        <td class="czcol" bgcolor="#FFFFFF"><a href="#">提醒处理</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">查看</a></td>
+                      </tr>
+                      
+                      <tr>
+                        <td bgcolor="#f8f8f8"><div align="center"><img src="images/tx.jpg"></div></td>
+                        <td class="datacol" bgcolor="#f8f8f8">李四</td>
+                        <td bgcolor="#f8f8f8">2023.04.19 23:59</td>
+                        <td bgcolor="#f8f8f8">乐学</td>
+                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
+                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">批改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">查看</a></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#FFFFFF"><div align="center"><img src="images/tx.jpg"></div></td>
+                        <td class="datacol" bgcolor="#FFFFFF">王五</td>
+                        <td bgcolor="#FFFFFF">2023.04.19 23:59</td>
+                        <td bgcolor="#FFFFFF">乐学</td>
+                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
+                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">批改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">查看</a></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#f8f8f8"><div align="center"><img src="images/tx.jpg"></div></td>
+                        <td class="datacol" bgcolor="#f8f8f8">路人甲</td>
+                        <td bgcolor="#f8f8f8">2023.04.19 23:59</td>
+                        <td bgcolor="#f8f8f8">乐学</td>
+                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
+                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">批改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">查看</a></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#FFFFFF"><div align="center"><img src="images/tx.jpg"></div></td>
+                        <td class="datacol" bgcolor="#FFFFFF">张三</td>
+                        <td bgcolor="#FFFFFF">2023.04.19 23:59</td>
+                        <td bgcolor="#FFFFFF">乐学</td>
+                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
+                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">批改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">查看</a></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#f8f8f8"><div align="center"><img src="images/tx.jpg"></div></td>
+                        <td class="datacol" bgcolor="#f8f8f8">张三</td>
+                        <td bgcolor="#f8f8f8">2023.04.19 23:59</td>
+                        <td bgcolor="#f8f8f8">乐学</td>
+                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
+                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">批改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">查看</a></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#FFFFFF"><div align="center"><img src="images/tx.jpg"></div></td>
+                        <td class="datacol" bgcolor="#FFFFFF">张三</td>
+                        <td bgcolor="#FFFFFF">2023.04.19 23:59</td>
+                        <td bgcolor="#FFFFFF">乐学</td>
+                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
+                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">批改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">查看</a></td>
+                      </tr>
+                    </table>
+                    <div class="fanye">
+                      <p class="fytip">Showing 1 to 10 of 12 entries</p>
+                      <div class="yem">
+                        <ul>
+                          <li><a href="#">First</a></li>
+                          <li><a href="#">&lt;</a></li>
+                          <li class="sellify"><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">&gt;</a></li>
+                          <li><a href="#">Last</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tabCot_product_2" class="tabCot"  style="display: none;"> 2222222222 </div>
+                  <div id="tabCot_product_3" class="tabCot"  style="display: none;"> 3333333333 </div>
+                  <script language="JavaScript" type="text/javascript" src="js/tab.js"></script> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="content-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+
+
+
+          
+
+          
+          
+        </div>
+        <!-- content-wrapper ends -->
+        
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+  <script src="js/data-table.js"></script>
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+
